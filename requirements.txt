@@ -1,0 +1,23 @@
+# AI CCTV Intelligence System - runtime dependencies
+# Target: Windows 10/11, Python 3.11 or 3.12
+#
+# Torch is pulled in automatically by ultralytics. On Windows the default
+# PyPI wheel is CPU-only, which is exactly what we want: the application must
+# run without CUDA. If you do have an NVIDIA GPU, install torch first from
+# https://pytorch.org/get-started/locally/ and then run setup.bat again.
+
+PySide6>=6.7.0,<6.9.0
+opencv-python>=4.9.0,<4.11.0
+numpy>=1.26.0,<2.0.0
+ultralytics>=8.3.0,<9.0.0
+
+# ByteTrack's association step. Ultralytics can auto-install this at runtime,
+# but that needs a network connection on first use, so we pin it explicitly.
+lap>=0.5.12
+
+# Needed to unpickle the bundled violence checkpoint (yolo_small_weights.pt),
+# which was trained with an older Ultralytics that stored its args with dill.
+dill>=0.3.8
+
+# Test-only dependency (installed by setup.bat, harmless at runtime)
+pytest>=8.0.0,<9.0.0

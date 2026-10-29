@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+models/*.pt
+data/
+config/config.json
+*.log
+
+# Agent workspace data (local memory, not part of the app)
+.workbuddy-ai/
